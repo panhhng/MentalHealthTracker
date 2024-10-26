@@ -1,11 +1,11 @@
-// screens/LoginScreen.js
+// screens/LoginScreen.tsx
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleLogin = () => {
     axios.post('http://localhost:5000/api/auth/login', { email, password })

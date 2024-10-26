@@ -1,11 +1,11 @@
-// screens/RegisterScreen.js
+// screens/RegisterScreen.tsx
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const RegisterScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const RegisterScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleRegister = () => {
     axios.post('http://localhost:5000/api/auth/register', { email, password })
